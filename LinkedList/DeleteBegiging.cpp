@@ -1,0 +1,27 @@
+/**
+ * Definition for singly-linked list.
+ * class Node {
+ * public:
+ *     int data;
+ *     Node *next;
+ *     Node() : data(0), next(nullptr) {}
+ *     Node(int x) : data(x), next(nullptr) {}
+ *     Node(int x, Node *next) : data(x), next(next) {}
+ * };
+ */
+
+Node *deleteLast(Node *list)
+{
+    Node *head = new Node();
+    head = list;
+    Node *temp = head;
+
+    while (temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    temp->next = NULL;
+
+    return head;
+}
